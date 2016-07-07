@@ -6,27 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 
-<div>
-<% String email = request.getParameter("email");
-if(email == null)
-{
-	out.print("You are not logged in");
-}
-else
-{
-	out.print("You are logged in as: " + email);
-}
-%>
-</div>
+<% String email = request.getParameter("email"); %>
 
-<% if(email == null){ %>
-	<a href="login.jsp"> Login </a>
-	<br>
-	<a href="register.jsp"> Register </a>
-<% } 
-	else { %>
+<% if(email != null){ 
+	out.print("You are logged in as: " + email); %>
+
 	<form name="logoutForm" method="post" action="LogoutServlet">
     	<input type="submit" value="Logout" />
 	</form>

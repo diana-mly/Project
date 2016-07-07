@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.*;
+
 /**
  * Servlet implementation class RegisterServlet
  */
@@ -34,6 +36,26 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		//declaram 
+		String name = request.getParameter("name");
+		String surname = request.getParameter("surname");
+		String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String admin_rights = request.getParameter("admin-rights");
+        //verificam sa nu fie campuri goale
+        if(!name.isEmpty() && !surname.isEmpty() && !email.isEmpty() && !password.isEmpty())
+        {
+        	//setam email si trimitem la index
+        	request.setAttribute("email", email);
+        	//redirectioneaza dupa login la lista cu proiecte
+        	request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+        
+        if(!admin_rights.isEmpty()){
+        	
+        	
+        }
 	}
 
 }

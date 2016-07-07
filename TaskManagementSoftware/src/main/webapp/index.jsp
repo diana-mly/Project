@@ -7,5 +7,8 @@
 
 <h1>Welcome!</h1>
 
+<button onclick="window.location.href='login.jsp';"> Login </button>
+<button onclick="window.location.href='register.jsp';"> Register </button>
+
 </body>
 </html>

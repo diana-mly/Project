@@ -14,9 +14,10 @@
 	<br>
     Email:<br> <input required type="text" name="email"/> <br/>
     <br>
-    Password: <br><input required type="password" name="password"/> <br/>
+    Password: <br> <input required type="password" name="password"/> <br/>
     <br>
-    <input type="submit" value="Login" />
+    Admin Rights: <br> <input type="password" name="admin_rights" placeholder="Leave empty for standard user"/> <br/>
+    <input type="submit" value="Register" />
 </form>
 
 </body>
